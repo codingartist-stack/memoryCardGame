@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0);
+const cards = ['A', 'B', 'C', 'D', 'E', 'F'];
 
+function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <h1>Memory Card Game</h1>
+
+      <button>New Game</button>
     </>
   );
 }
