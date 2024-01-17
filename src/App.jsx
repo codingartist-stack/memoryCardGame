@@ -4,15 +4,23 @@ import { useAsync } from 'react-use';
 import './App.css';
 import Board from './components/createBoard';
 
-const testingDeck = [
-  { id: 1, name: 'blue' },
-  { id: 2, name: 'red' },
-  { id: 3, name: 'yellow' },
-];
-
 const App = () => {
   // const [deck, setDeck] = useState([]);
   const [turns, setTurns] = useState(0);
+
+  const genOne = 151;
+  const usedNumbers = new Set();
+
+  const getRandomNumber = (generation) => {
+    let number = Math.floor(Math.random() * 151) + 1;
+
+    while (usedNumbers.has(number)) {
+      number = Math.floor(Math.random() * 151) + 1;
+    }
+
+    usedNumbers.add(number);
+    return number;
+  };
 
   const {
     value: deck,
@@ -22,7 +30,9 @@ const App = () => {
     // loop
     const deck = [];
     for (let i = 0; i < 5; i++) {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${5}/`);
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${getRandomNumber(genOne)}/`
+      );
       const pokemon = await response.json();
 
       const pokemonID = pokemon.id;
