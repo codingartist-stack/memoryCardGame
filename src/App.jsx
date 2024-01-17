@@ -9,7 +9,7 @@ function App() {
   const usedNumbers = new Set();
 
   const getRandomNumber = (generation) => {
-    const randomNumber = Math.floor(Math.random() * generation) + 1;
+    let randomNumber = Math.floor(Math.random() * generation) + 1;
 
     while (usedNumbers.has(randomNumber)) {
       randomNumber = Math.floor(Math.random() * generation) + 1;
@@ -21,36 +21,31 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${getRandomNumber(GenOne)}`,
-        { mode: 'cors' }
-      );
+      for (let i = 0; i < 5; i++) {
+        const response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${getRandomNumber(GenOne)}`,
+          { mode: 'cors' }
+        );
 
-      const poke = await response.json();
+        const poke = await response.json();
 
-      const pokemonID = poke.id;
-      const pokemonName = poke.name;
-      const pokemonURL = poke.sprites.front_default;
+        const pokemonID = poke.id;
+        const pokemonName = poke.name;
+        const pokemonURL = poke.sprites.front_default;
 
-      console.log(pokemonID);
-      console.log(pokemonName);
-      console.log(pokemonURL);
-
-      return { id: pokemonID, name: pokemonName, url: pokemonURL };
+        setCards((currentCards) => {
+          return [
+            ...currentCards,
+            { id: pokemonID, name: pokemonName, url: pokemonURL },
+            { id: pokemonID, name: pokemonName, url: pokemonURL },
+          ];
+        });
+      }
     };
-    const poke = fetchData();
 
-    console.log(poke);
-
-    // for (let i = 0; i < 5; i++) {
-    //   const poke = fetchData();
-    //   setCards((currentCards) => {
-    //     return [...currentCards, { poke }];
-    //   });
-    // }
+    fetchData();
+    console.log(cards);
   }, []);
-
-  // console.log(cards);
 
   return (
     <>
