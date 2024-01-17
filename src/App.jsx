@@ -6,21 +6,39 @@ function App() {
   const [turns, setTurns] = useState(0);
 
   const GenOne = 151;
-  const randomNumber = (generation) => {
-    return Math.floor(Math.random() * generation);
+  const usedNumbers = new Set();
+
+  const getRandomNumber = (generation) => {
+    const randomNumber = Math.floor(Math.random() * generation);
+
+    while (usedNumbers.has(randomNumber)) {
+      randomNumber = Math.floor(Math.random() * generation) + 1;
+    }
+    usedNumbers.add(randomNumber);
+
+    return randomNumber;
   };
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${randomNumber(GenOne)}`
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${getRandomNumber(GenOne)}`,
+        { mode: 'cors' }
       );
 
-      result.json().then((json) => {
-        console.log(json);
-      });
+      const poke = await response.json();
+      // console.log(poke);
+      return poke;
     };
-    fetchData();
+    // fetchData();
+
+    for (let i = 0; i < 5; i++) {
+      const poke = fetchData();
+      setCards((currentCards) => {
+        return [...currentCards, { poke }];
+      });
+    }
+    console.log(cards);
   }, []);
 
   return (
