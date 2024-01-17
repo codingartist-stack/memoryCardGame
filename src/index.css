@@ -1,13 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --clr-dropShadow: rgb(139, 157, 162, 0.5);
+}
+
 body {
   font-family: Raleway, sans-serif;
   margin: 0;
   text-align: center;
 }
 
+#root {
+  display: grid;
+  justify-items: center;
+  gap: min(35px, 10%);
+}
+
+.gameBoard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  width: min(60%, 80%);
+}
 .card {
-  min-width: 5rem;
-  min-height: 5rem;
-  background-color: cadetblue;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  background: white;
+  border: solid 0.25em red;
+  display: grid;
+  place-items: center;
+  box-shadow: 5px 5px 5px var(--clr-dropShadow);
 }
