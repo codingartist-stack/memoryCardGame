@@ -9,7 +9,7 @@ function App() {
   const usedNumbers = new Set();
 
   const getRandomNumber = (generation) => {
-    const randomNumber = Math.floor(Math.random() * generation);
+    const randomNumber = Math.floor(Math.random() * generation) + 1;
 
     while (usedNumbers.has(randomNumber)) {
       randomNumber = Math.floor(Math.random() * generation) + 1;
@@ -27,19 +27,30 @@ function App() {
       );
 
       const poke = await response.json();
-      // console.log(poke);
-      return poke;
-    };
-    // fetchData();
 
-    for (let i = 0; i < 5; i++) {
-      const poke = fetchData();
-      setCards((currentCards) => {
-        return [...currentCards, { poke }];
-      });
-    }
-    console.log(cards);
+      const pokemonID = poke.id;
+      const pokemonName = poke.name;
+      const pokemonURL = poke.sprites.front_default;
+
+      console.log(pokemonID);
+      console.log(pokemonName);
+      console.log(pokemonURL);
+
+      return { id: pokemonID, name: pokemonName, url: pokemonURL };
+    };
+    const poke = fetchData();
+
+    console.log(poke);
+
+    // for (let i = 0; i < 5; i++) {
+    //   const poke = fetchData();
+    //   setCards((currentCards) => {
+    //     return [...currentCards, { poke }];
+    //   });
+    // }
   }, []);
+
+  // console.log(cards);
 
   return (
     <>
