@@ -23,8 +23,6 @@ const App = () => {
   };
   const [deck, setDeck] = useState([]);
 
-  useEffect(() => setDeck(deck));
-
   useEffectOnce(() => {
     const getPokemonCards = async () => {
       // loop
@@ -44,22 +42,15 @@ const App = () => {
           { id: pokemonID, name: pokemonName, url: pokemonURL }
         );
       }
-      deck = deck.sort(() => Math.random() - 0.5);
+      deck = [...deck.sort(() => Math.random() - 0.5)];
       setDeck(deck);
     };
     getPokemonCards();
   });
 
   const shuffleCards = () => {
-    // e.preventDefault();
-    // let shuffledDeck = [];
-    // shuffledDeck = deck.sort(() => Math.random() - 0.5);
-
-    // console.log(shuffledDeck);
-    //   setTurns(0);
     setDeck((currentDeck) => {
-      currentDeck.sort(() => Math.random() - 0.5);
-      console.log(currentDeck);
+      currentDeck = [...currentDeck.sort(() => Math.random() - 0.5)];
       return currentDeck;
     });
   };
