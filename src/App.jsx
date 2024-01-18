@@ -52,12 +52,16 @@ const App = () => {
 
   const shuffleCards = () => {
     // e.preventDefault();
-    let shuffledDeck = [];
-    shuffledDeck = deck.sort(() => Math.random() - 0.5);
+    // let shuffledDeck = [];
+    // shuffledDeck = deck.sort(() => Math.random() - 0.5);
 
-    console.log(shuffledDeck);
+    // console.log(shuffledDeck);
     //   setTurns(0);
-    setDeck(shuffledDeck);
+    setDeck((oldDeck) => {
+      oldDeck.sort(() => Math.random() - 0.5);
+      console.log(oldDeck);
+      return oldDeck;
+    });
   };
 
   return (
