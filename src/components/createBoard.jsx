@@ -7,7 +7,7 @@ export default function Board(props) {
         {props.deck.map((card) => {
           return (
             <div className="card" id={card.id} key={crypto.randomUUID()}>
-              <img src={card.url} alt={card.name} srcset="" />
+              <img src={card.url} alt={card.name} />
             </div>
           );
         })}

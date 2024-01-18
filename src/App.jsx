@@ -45,12 +45,11 @@ const App = () => {
   });
 
   // const shuffleCards = () => {
-  //   const shuffledDeck = [...testingDeck, ...testingDeck].sort(
-  //     () => Math.random() - 0.5
-  //   );
+  //   const shuffledDeck = [...deck, ...deck].sort(() => Math.random() - 0.5);
   //   console.log(shuffledDeck);
 
   //   setTurns(0);
+  //   return shuffledDeck;
   // };
 
   // console.log(deck);
