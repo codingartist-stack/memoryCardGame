@@ -57,6 +57,13 @@ const App = () => {
       currentDeck = [...currentDeck.sort(() => Math.random() - 0.5)];
       return currentDeck;
     });
+
+    setDeck((currentDeck) => {
+      currentDeck = currentDeck.map((card) => {
+        return { ...card, matched: false };
+      });
+      return currentDeck;
+    });
   };
 
   //handle choice
@@ -80,7 +87,7 @@ const App = () => {
         });
         resetTurn();
       } else {
-        resetTurn();
+        setTimeout(() => resetTurn(), 1000);
       }
     }
   }, [choiceOne, choiceTwo]);

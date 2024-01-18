@@ -30,8 +30,32 @@ body {
   display: grid;
   place-items: center;
   box-shadow: 5px 5px 5px var(--clr-dropShadow);
+  position: relative;
 }
 
-.back {
+.card .front {
+  position: absolute;
+  transform: rotateY(90deg);
+  border-radius: 10px;
+  background: rgb(4, 240, 78);
+  background: linear-gradient(
+    0deg,
+    rgb(73, 206, 115) 54%,
+    rgba(4, 240, 237, 1) 60%,
+    rgba(4, 155, 240, 1) 91%
+  );
+}
+
+.flipped .front {
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+.card .back {
   height: 96px;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
 }
