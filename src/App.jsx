@@ -115,6 +115,8 @@ const App = () => {
           disabled={disabled}
         />
       </main>
+
+      <p>Turns: {turns}</p>
     </>
   );
 };
