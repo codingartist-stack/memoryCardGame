@@ -57,10 +57,10 @@ const App = () => {
 
     // console.log(shuffledDeck);
     //   setTurns(0);
-    setDeck((oldDeck) => {
-      oldDeck.sort(() => Math.random() - 0.5);
-      console.log(oldDeck);
-      return oldDeck;
+    setDeck((currentDeck) => {
+      currentDeck.sort(() => Math.random() - 0.5);
+      console.log(currentDeck);
+      return currentDeck;
     });
   };
 
