@@ -31,6 +31,11 @@ body {
   place-items: center;
   box-shadow: 5px 5px 5px var(--clr-dropShadow);
   position: relative;
+  transition: all ease-in-out 0.2s;
+}
+
+.card:hover {
+  outline: solid 0.25em red;
 }
 
 .front {
