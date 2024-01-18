@@ -9,6 +9,7 @@ const App = () => {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+  const [disabled, setDisabled] = useState(false);
 
   const genOne = 151;
   const usedNumbers = new Set();
@@ -75,6 +76,7 @@ const App = () => {
   //check for match
   useEffect(() => {
     if (choiceOne && choiceTwo) {
+      setDisabled(true);
       if (choiceOne.name === choiceTwo.name) {
         setDeck((prevDeck) => {
           return prevDeck.map((card) => {
@@ -97,6 +99,7 @@ const App = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns((prevTurns) => prevTurns + 1);
+    setDisabled(false);
   };
 
   return (
@@ -109,6 +112,7 @@ const App = () => {
           handleChoice={handleChoice}
           choiceOne={choiceOne}
           choiceTwo={choiceTwo}
+          disabled={disabled}
         />
       </main>
     </>

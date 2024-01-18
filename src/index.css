@@ -33,9 +33,10 @@ body {
   position: relative;
 }
 
-.card .front {
+.front {
   position: absolute;
   transform: rotateY(90deg);
+  transition: all ease-in-out 2s;
   border-radius: 10px;
   background: rgb(4, 240, 78);
   background: linear-gradient(
@@ -48,14 +49,9 @@ body {
 
 .flipped .front {
   transform: rotateY(0deg);
-  transition-delay: 0.2s;
+  transition-delay: 2s;
 }
 
-.card .back {
+.back {
   height: 96px;
-  transition-delay: 0.2s;
-}
-
-.flipped .back {
-  transform: rotateY(90deg);
 }

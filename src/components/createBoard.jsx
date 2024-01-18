@@ -1,6 +1,12 @@
 import SingleCard from './singleCard';
 
-export default function Board({ deck, handleChoice, choiceOne, choiceTwo }) {
+export default function Board({
+  deck,
+  handleChoice,
+  choiceOne,
+  choiceTwo,
+  disabled,
+}) {
   if (deck.length === 0) {
     return <h2>Click New Game to start</h2>;
   } else {
@@ -13,6 +19,7 @@ export default function Board({ deck, handleChoice, choiceOne, choiceTwo }) {
               key={crypto.randomUUID()}
               handleChoice={handleChoice}
               flipped={card === choiceOne || card === choiceTwo || card.matched}
+              disabled={disabled}
             />
           );
         })}
