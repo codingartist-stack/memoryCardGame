@@ -5,8 +5,10 @@ import './App.css';
 import Board from './components/createBoard';
 
 const App = () => {
-  // const [deck, setDeck] = useState([]);
+  const [deck, setDeck] = useState([]);
   const [turns, setTurns] = useState(0);
+  const [choiceOne, setChoiceOne] = useState(null);
+  const [choiceTwo, setChoiceTwo] = useState(null);
 
   const genOne = 151;
   const usedNumbers = new Set();
@@ -21,8 +23,8 @@ const App = () => {
     usedNumbers.add(number);
     return number;
   };
-  const [deck, setDeck] = useState([]);
 
+  //get pokemon
   useEffectOnce(() => {
     const getPokemonCards = async () => {
       // loop
@@ -48,11 +50,25 @@ const App = () => {
     getPokemonCards();
   });
 
+  //shuffleCards
   const shuffleCards = () => {
+    setTurns(0);
     setDeck((currentDeck) => {
       currentDeck = [...currentDeck.sort(() => Math.random() - 0.5)];
       return currentDeck;
     });
+  };
+
+  //handle choice
+
+  const handleChoice = (card) => {
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  };
+
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns((prevTurns) => prevTurns + 1);
   };
 
   return (
@@ -60,7 +76,7 @@ const App = () => {
       <h1>Memory Card Game</h1>
       <button onClick={shuffleCards}>New Game</button>
       <main className="gameBoard">
-        <Board deck={deck} />
+        <Board deck={deck} handleChoice={handleChoice} />
       </main>
     </>
   );
