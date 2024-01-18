@@ -7,7 +7,7 @@ export default function Board({ deck }) {
     return (
       <>
         {deck.map((card) => {
-          return <SingleCard card={card} />;
+          return <SingleCard card={card} key={crypto.randomUUID()} />;
         })}
       </>
     );
