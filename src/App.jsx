@@ -40,8 +40,8 @@ const App = () => {
         const pokemonURL = pokemon.sprites.front_default;
 
         deck.push(
-          { id: pokemonID, name: pokemonName, url: pokemonURL },
-          { id: pokemonID, name: pokemonName, url: pokemonURL }
+          { id: pokemonID, name: pokemonName, url: pokemonURL, matched: false },
+          { id: pokemonID, name: pokemonName, url: pokemonURL, matched: false }
         );
       }
       deck = [...deck.sort(() => Math.random() - 0.5)];
@@ -65,6 +65,27 @@ const App = () => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
+  //check for match
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.name === choiceTwo.name) {
+        setDeck((prevDeck) => {
+          return prevDeck.map((card) => {
+            if (card.name === choiceOne.name) {
+              return { ...card, matched: true };
+            } else {
+              return card;
+            }
+          });
+        });
+        resetTurn();
+      } else {
+        resetTurn();
+      }
+    }
+  }, [choiceOne, choiceTwo]);
+
+  //resetTurn
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
@@ -76,7 +97,12 @@ const App = () => {
       <h1>Memory Card Game</h1>
       <button onClick={shuffleCards}>New Game</button>
       <main className="gameBoard">
-        <Board deck={deck} handleChoice={handleChoice} />
+        <Board
+          deck={deck}
+          handleChoice={handleChoice}
+          choiceOne={choiceOne}
+          choiceTwo={choiceTwo}
+        />
       </main>
     </>
   );
