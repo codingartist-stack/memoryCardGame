@@ -31,3 +31,7 @@ body {
   place-items: center;
   box-shadow: 5px 5px 5px var(--clr-dropShadow);
 }
+
+.back {
+  width: 96px;
+}
