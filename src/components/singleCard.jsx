@@ -1,3 +1,5 @@
+import pokeBall from './../assets/img/coverPokeball.png';
+
 export default function SingleCard({ card, handleChoice, flipped, disabled }) {
   const handleClick = () => {
     if (!disabled) {
@@ -12,11 +14,7 @@ export default function SingleCard({ card, handleChoice, flipped, disabled }) {
       onClick={handleClick}
     >
       <img src={card.url} alt={card.name} className="front" />
-      <img
-        src="./src/assets/img/coverPokeball.png"
-        alt="pokeBall"
-        className="back"
-      />
+      <img src={pokeBall} alt="pokeBall" className="back" />
     </div>
   );
 }
