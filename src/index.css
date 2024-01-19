@@ -84,4 +84,5 @@ button:hover {
 
 .back {
   height: 96px;
+  background-image: url('./src/assets/img/coverPokeball.png');
 }
