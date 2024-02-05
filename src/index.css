@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --clr-dropShadow: rgb(139, 157, 162, 0.5);
+  --clr-dropShadow: rgba(89, 102, 105, 0.5);
 }
 
 body {
@@ -57,6 +57,18 @@ button:hover {
   box-shadow: 5px 5px 5px var(--clr-dropShadow);
   position: relative;
   transition: all ease-in-out 0.2s;
+}
+
+.card::after {
+  content: ' ';
+  width: 100%;
+  aspect-ratio: 1;
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(238,174,202);
+background: linear-gradient(30deg, rgba(238,174,202,0) 0%, rgba(238,174,202,1) 25%, rgba(238,174,202,1) 43%, rgba(221,177,208,0) 51%, rgba(210,178,212,1) 56%, rgba(148,187,233,1) 85%, rgba(148,187,233,0) 100%);
+  mix-blend-mode: color-dodge;
+  opacity: .6;
 }
 
 .card:hover {

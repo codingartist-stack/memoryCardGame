@@ -89,7 +89,7 @@ const App = () => {
         });
         resetTurn();
       } else {
-        setTimeout(() => resetTurn(), 1000);
+        setTimeout(() => resetTurn(), 2000);
       }
     }
   }, [choiceOne, choiceTwo]);

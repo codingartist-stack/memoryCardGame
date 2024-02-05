@@ -1,4 +1,5 @@
-import pokeBall from './../assets/img/coverPokeball.png';
+// import pokeBall from './../assets/img/coverPokeball.png';
+
 
 export default function SingleCard({ card, handleChoice, flipped, disabled }) {
   const handleClick = () => {
@@ -12,6 +13,7 @@ export default function SingleCard({ card, handleChoice, flipped, disabled }) {
       className={flipped ? 'flipped card' : 'card'}
       id={card.id}
       onClick={handleClick}
+      
     >
       <img src={card.url} alt={card.name} className="front" />
       <div className="back">
