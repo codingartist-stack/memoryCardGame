@@ -8,7 +8,7 @@ export default function Board({
   disabled,
 }) {
   if (deck.length === 0) {
-    return <h2>Click New Game to start</h2>;
+    return <h2>...Loading Deck...</h2>;
   } else {
     return (
       <>
