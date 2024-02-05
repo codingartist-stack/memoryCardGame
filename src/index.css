@@ -49,7 +49,7 @@ button:hover {
 }
 .card {
   aspect-ratio: 1;
-  border-radius: 10px;
+  border-radius: 50%;
   background: white;
   border: solid 0.25em red;
   display: grid;
@@ -61,6 +61,7 @@ button:hover {
 
 .card:hover {
   outline: solid 0.25em red;
+  transform: rotateY(20deg) rotateX(20deg) perspective(23rem);
 }
 
 .front {
@@ -68,13 +69,7 @@ button:hover {
   transform: rotateY(90deg);
   transition: all ease-in-out 2s;
   border-radius: 10px;
-  background: rgb(4, 240, 78);
-  background: linear-gradient(
-    0deg,
-    rgb(73, 206, 115) 54%,
-    rgba(4, 240, 237, 1) 60%,
-    rgba(4, 155, 240, 1) 91%
-  );
+
 }
 
 .flipped .front {
@@ -82,6 +77,27 @@ button:hover {
   transition-delay: 2s;
 }
 
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 2s;
+}
+
 .back {
-  height: 96px;
+  height: 140px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgb(255,0,0);
+background: linear-gradient(199deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 48%, rgb(106, 106, 106) 48%, rgba(150,150,150,1) 55%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+  display: grid;
+  place-items: center;
+}
+
+.pokeBtn {
+  width: 40px;
+  aspect-ratio: 1;
+  /* background: grey; */
+  border-radius: 50%;
+  border: solid #7c7c7c;
+  background: rgb(166,166,166);
+background: radial-gradient(circle, rgba(166,166,166,1) 0%, rgba(166,166,166,1) 31%, rgba(85,85,85,1) 31%, rgba(85,85,85,1) 44%, rgba(166,166,166,1) 44%, rgba(166,166,166,1) 72%, rgba(80,80,80,1) 72%, rgba(80,80,80,1) 72%);
 }

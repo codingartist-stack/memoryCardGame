@@ -14,7 +14,10 @@ export default function SingleCard({ card, handleChoice, flipped, disabled }) {
       onClick={handleClick}
     >
       <img src={card.url} alt={card.name} className="front" />
-      <img src={pokeBall} alt="pokeBall" className="back" />
+      <div className="back">
+        <div className='pokeBtn'></div>
+      </div>
+      {/* <img src={pokeBall} alt="pokeBall" className="back" /> */}
     </div>
   );
 }
