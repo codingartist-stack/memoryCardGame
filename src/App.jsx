@@ -1,5 +1,6 @@
 import { useState, useEffect, setValue } from 'react';
 import { useEffectOnce } from 'react-use';
+import gymImage from './assets/img/pokemon-gym.png'
 
 import './App.css';
 import Board from './components/createBoard';
@@ -104,6 +105,7 @@ const App = () => {
 
   return (
     <>
+    <img src={gymImage} alt="Pokemon Gym" className='pokemonGymImage'/>
       <h1>Gotta Match Em All</h1>
       <button onClick={shuffleCards}>New Game</button>
       <main className="gameBoard">
