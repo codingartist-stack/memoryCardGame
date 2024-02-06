@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap')
+
+/* @import url('./assets/img/pokemon-gym.png'); */
+
 :root {
   --clr-dropShadow: rgba(89, 102, 105, 0.5);
 }
@@ -8,7 +13,7 @@ body {
   font-family: Raleway, sans-serif;
   margin: 0;
   text-align: center;
-  background: rgb(255, 0, 0);
+  /* background: rgb(255, 0, 0);
   background: linear-gradient(
     180deg,
     rgba(255, 0, 0, 0.5) 0%,
@@ -17,22 +22,39 @@ body {
     rgba(50, 50, 50, 0.5) 55%,
     rgba(255, 255, 255, 1) 55%,
     rgba(255, 255, 255, 1) 100%
-  );
+  ); */
+  background-image: url('./assets/img/pokemon-gym.png');
+  background-size: cover;
   height: 100svh;
 }
+
+
+h1 {
+  font-family: "Architects Daughter", cursive;
+  font-weight: 900;
+  font-size: 4rem;
+  font-style: normal;
+  color: white;
+  margin: 1rem;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width:1px;
+  position: relative;
+  text-shadow: 1px 1px 2px rgb(0, 0, 160), 0 0 .25em blue, 0 0 .5em red;
+}
+
 
 button {
   border: none;
   padding: 1rem 2rem;
   border-radius: 10px;
-  background-color: rgba(50, 50, 50, 1);
+  background-color: blue;
   color: white;
   font-weight: 800;
 }
 
 button:hover {
-  background-color: rgb(95, 95, 95, 1);
-  outline: solid 0.25em rgba(95, 95, 95, 1);
+  background-color: red;
+  outline: solid 0.25em red;
 }
 
 #root {
@@ -47,6 +69,14 @@ button:hover {
   gap: 1rem;
   width: min(70%, 650px);
 }
+
+.turnsCounter {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
 .card {
   aspect-ratio: 1;
   border-radius: 50%;
@@ -73,9 +103,7 @@ button:hover {
 
 .card:hover {
   outline: solid 0.25em red;
-  /* transform: rotate(-20deg) rotateY(20deg) rotateX(20deg); */
-  /* transform: rotate(var(--rotateX)); */
-  /* transform: rotate(-20deg); */
+
 }
 
 .front {
@@ -97,7 +125,7 @@ button:hover {
 }
 
 .back {
-  height: 140px;
+  height: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
   background: rgb(255,0,0);
