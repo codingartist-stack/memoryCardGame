@@ -75,7 +75,7 @@ button:hover {
   outline: solid 0.25em red;
   /* transform: rotate(-20deg) rotateY(20deg) rotateX(20deg); */
   /* transform: rotate(var(--rotateX)); */
-  transform: rotate(-20deg);
+  /* transform: rotate(-20deg); */
 }
 
 .front {
