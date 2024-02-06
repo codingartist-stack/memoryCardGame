@@ -56,7 +56,7 @@ button:hover {
   place-items: center;
   box-shadow: 5px 5px 5px var(--clr-dropShadow);
   position: relative;
-  transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.1s;
 }
 
 .card::after {
@@ -73,7 +73,7 @@ background: linear-gradient(30deg, rgba(238,174,202,0) 0%, rgba(238,174,202,1) 2
 
 .card:hover {
   outline: solid 0.25em red;
-  transform: rotateY(20deg) rotateX(20deg) perspective(23rem);
+  /* transform: rotateY(20deg) rotateX(20deg) perspective(23rem); */
 }
 
 .front {
