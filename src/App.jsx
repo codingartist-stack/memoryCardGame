@@ -104,7 +104,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Memory Card Game</h1>
+      <h1>Gotta Match 'Em All</h1>
       <button onClick={shuffleCards}>New Game</button>
       <main className="gameBoard">
         <Board

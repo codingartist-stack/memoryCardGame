@@ -6,7 +6,7 @@ export default function SingleCard({ card, handleChoice, flipped, disabled }) {
   const mousePosition = useMousePosition();
 
   const styleTrack = {
-    transform: `rotate(${mousePosition.x}deg) rotateY(${mousePosition.x}deg) rotateX(${mousePosition.y}deg)`
+    transform: `rotate(${mousePosition.x}deg) rotateY(${mousePosition.x}deg)`
   }
 
   const restingStyle =  {
