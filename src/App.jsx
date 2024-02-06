@@ -5,6 +5,8 @@ import gymImage from './assets/img/pokemon-gym.png'
 import './App.css';
 import Board from './components/createBoard';
 
+//I want to add a generation drop down or button to pick what generation you would like to pull form.
+
 const App = () => {
   const [deck, setDeck] = useState([]);
   const [turns, setTurns] = useState(0);

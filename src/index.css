@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap')
-
-/* @import url('./assets/img/pokemon-gym.png'); */
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 
 :root {
   --clr-dropShadow: rgba(89, 102, 105, 0.5);
@@ -13,18 +11,6 @@ body {
   font-family: Raleway, sans-serif;
   margin: 0;
   text-align: center;
-  /* background: rgb(255, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 0, 0, 0.5) 0%,
-    rgba(255, 0, 0, 0.5) 50%,
-    rgba(50, 50, 50, 0.5) 50%,
-    rgba(50, 50, 50, 0.5) 55%,
-    rgba(255, 255, 255, 1) 55%,
-    rgba(255, 255, 255, 1) 100%
-  ); */
-  /* background-image: url('./assets/img/pokemon-gym.png');
-  background-size: cover; */
   height: 100svh;
 }
 
@@ -63,7 +49,6 @@ button:hover {
   justify-items: center;
   gap: min(35px, 10%);
   position: relative;
-  /* height: 100svh; */
 }
 
 .pokemonGymImage {
@@ -150,7 +135,6 @@ background: linear-gradient(199deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 48%, rgb
 .pokeBtn {
   width: 40px;
   aspect-ratio: 1;
-  /* background: grey; */
   border-radius: 50%;
   border: solid #7c7c7c;
   background: rgb(166,166,166);
